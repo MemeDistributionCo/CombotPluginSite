@@ -2,6 +2,14 @@ $(document).ready(function(f) {
     $("#plform").submit(function(e) {
         e.preventDefault();   
     });
+    firebase.auth().onAuthStateChanged(function(user) {
+        if(user) {
+            //logged in
+            $("#login-out").html("<button onclick=\"logout()\">Logout</button> You are currently logged in");
+        } else {
+            $("#login-out").html("<button onclick=\"login()\">Login</button> You must log in to submit a plugin.");
+        }
+    });
 });
 
 //jQuery required thx
@@ -75,7 +83,7 @@ function uploadForm() {
                 //    downloadLink:
                 //});
             }).catch(function(err) {
-                alert("Mission failed, we'll get 'em next time: " + err);
+                alert("Failed to upload plugin, is it too big? (size>2MB) Either way, send me a message");
                 location.reload();
             });
         } else {
@@ -90,6 +98,15 @@ function login() {
         if(x) {
             location.reload();
         }
+    });
+}
+
+function logout() {
+    firebase.auth().signOut().then(function() {
+        location.reload();
+    }).catch(function(err) {
+        alert("Failed to sign out?? " + err);
+        location.reload();
     });
 }
 
