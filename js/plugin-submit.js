@@ -16,6 +16,20 @@ function submitPlugin() {
     }
 }
 
+function getTags() {
+    var tags = [];
+    var tagBoxes = $("input[name='tags']");
+    for(var i = 0; i < tagBoxes.length; i++) {
+        if(tagBoxes[i].checked) {
+            tags.push($(tagBoxes[i]).val());
+        }
+    }
+    if(tags.length == 0) {
+        tags = ["misc"];
+    }
+    return tags;
+}
+
 function uploadForm() {
     firebase.auth().onAuthStateChanged(function(user) {
         if(user) {
@@ -38,12 +52,15 @@ function uploadForm() {
             ref.put(file).then(function(snap) {
                 alert("Upload complete");
                 ref.getDownloadURL().then(function(url) {
-                    //alert("URL!: " + url); 
+                    //alert("URL!: " + url);
+                    tags = getTags();
+                    
                     firebase.database().ref(finPath.replace(file.name, "")).set({
                         downloadUrl:url,
                         pluginName:plName,
                         pluginDesc:plDesc,
-                        pluginInfo:plInfo
+                        pluginInfo:plInfo,
+                        pluginTags:tags
                     }).then(function(fin) {
                         alert("Plugin set to pending!");
                         location.reload();

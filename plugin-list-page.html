@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>
-            ComBot Plugin
+            ComBot Plugin List
         </title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" type="text/css"/>
         <link rel="stylesheet" href="css/main.css" type="text/css"/>
@@ -23,7 +23,7 @@
           };
           firebase.initializeApp(config);
         </script>   
-        <script src="js/plugin-info.js"></script>
+        <script src="js/plugin-list.js"></script>
     </head>
     <body>
         <div style="height:300px;">
@@ -33,30 +33,12 @@
             <div class="container-fluid">
                 <div class="row">
                 <!-- Actual body / content -->
-                <div class="plugin-container col-md-9">
-                    <div id="plugin-title">Plugin Title</div>
-                    <div id="plugin-desc" class="text">Short Description</div>
-                    <div id="plugin-tags" class="text">Tags, Here</div>
-                    <div id="plugin-dl">Download: </div>
-                    <hr/>
-                    <div id="plugin-info" class="text">Information</div>
-                    <hr/>
-                    <div class="plugin-prev">Previous versions</div>
-                    
-                </div>
-                <div class="author-container col-md-3">
-                    <div id="plugin-author">Author</div>
-                    <div id="author-bio">Short Bio</div>
-                    <div id="contact-info">Contact info</div>
-                </div>
-                </div>
-                <div class="row">
-                    <div class="comment-container col-9">Comments will appear here later</div>
+                    <div class="col-12" id="plugin-list"></div>
                 </div>
             </div>
         </div>
     </body>
     <script>
-        getInformation();
+        listPlugins();
     </script>
 </html>

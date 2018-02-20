@@ -39,8 +39,13 @@
                             Plugin Name: <input id="plname" type="text" placeholder="Plugin name"/>
                             Plugin Description: <input id="pldesc" type="text" placeholder="Plugin Desc (Brief)"/>
                             Plugin Info: <textarea id="plinfo" form="plform" placeholder="Any other information you want to provide about your plugin. Permissions, how to use, etc"></textarea>
+                            Plugin Tags:<br/>
+                            <input class="cb" type="checkbox" name="tags" value="admin"/> Admin<br/>
+                            <input class="cb" type="checkbox" name="tags" value="fun"/> Fun<br/>
+                            <input class="cb" type="checkbox" name="tags" value="util"/> Util<br/>
+                            <input class="cb" type="checkbox" name="tags" value="misc"/> Misc<br/>
                             Plugin File: <input id="jarfile" type="file" accept=".jar"/>
-                            Submit: <button type="button" onclick="submitPlugin()">Submit</button>
+                            Submit: <button type="button" onclick="uploadForm()">Submit</button>
                         </form>
                     </div>
                 </div>
