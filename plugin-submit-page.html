@@ -28,18 +28,19 @@
     <body>
         <div style="height:300px;">
             <!-- Everything that goes before the main content -->
+            <button onclick="login()">Login</button>
         </div>
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
                 <!-- Actual body / content -->
                     <div class="col-12">
-                        <form id="plform" class="plform" onsubmit="submitPlugin()">
+                        <form id="plform" class="plform">
                             Plugin Name: <input id="plname" type="text" placeholder="Plugin name"/>
                             Plugin Description: <input id="pldesc" type="text" placeholder="Plugin Desc (Brief)"/>
                             Plugin Info: <textarea id="plinfo" form="plform" placeholder="Any other information you want to provide about your plugin. Permissions, how to use, etc"></textarea>
                             Plugin File: <input id="jarfile" type="file" accept=".jar"/>
-                            Submit: <input type="submit"/>
+                            Submit: <button type="button" onclick="submitPlugin()">Submit</button>
                         </form>
                     </div>
                 </div>
