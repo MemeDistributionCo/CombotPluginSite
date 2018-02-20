@@ -1,0 +1,32 @@
+body {
+    
+}
+
+.plugin-container {
+    background-color:red;
+}
+
+.author-container {
+    background-color: orange;
+}
+
+.comment-container {
+    background-color:green;
+}
+
+.content {
+    padding-left: 12%;
+    padding-right:12%; 
+}
+
+.plugin-container #plugin-title {
+    font-size: 32px;
+}
+
+.plugin-container {
+    font-weight: 700;
+}
+
+.plugin-container .text {
+    font-weight: 300;
+}
