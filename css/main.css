@@ -30,3 +30,18 @@ body {
 .plugin-container .text {
     font-weight: 300;
 }
+
+form.plform input {
+    display: block;
+    margin-bottom: 10px;
+}
+
+form.plform textarea {
+    display: block;
+    width: 50%;
+}
+
+form.plform {
+    width: 100%;
+    display: block;
+}
